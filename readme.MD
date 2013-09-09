@@ -1,1 +1,0 @@
-This is a tool for randomly assigning things to people. The randomizing is weighted based on the people ranking the things. I made it with room selection for roommates in an apartment in mind, but you could use it for anything!
