@@ -1,0 +1,34 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://static2cdn.hubspot.com/style_guide/static-4.277/sass/style_guide_plus_layout.css" />
+    <link rel="stylesheet" type="text/css" href="https://static2cdn.hubspot.com/style_guide_doc/static-1.407/sass/style_guide_doc.css" />
+    <title>Page 1</title>
+</head>
+<body>
+    <div class="page" id="wrapper">
+        <div id="content" class="container-fluid">
+            <header class="hs-main">
+                <h1>How many people, and how many things to rank</h1>
+            </header>
+            <form class="hs-form" action="/powgarithm/input_people_things/" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                    <label>People</label>
+                    <div class="input">
+                        <input class="hs-input" type='text' name="numPeople">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Things</label>
+                    <div class="input">
+                        <input class="hs-input" type="text" name="numThings">
+                    </div>
+                </div>
+                <div class="actions">
+                    <input class="hs-button primary" type="submit" value="Submit!">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

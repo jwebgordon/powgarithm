@@ -1,0 +1,39 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://static2cdn.hubspot.com/style_guide/static-4.277/sass/style_guide_plus_layout.css" />
+    <title>Results!</title>
+</head>
+<body>
+    <div class="page" id="wrapper">
+        <div id="content" class="container-fluid">
+            <header class="hs-main">
+                <h1>Well, here ya go!</h1>
+            </header>
+            <div class="row-fluid">
+                <div class="span6 offset3">
+                    <table class="hs-table">
+                        <thead>
+                            <tr>
+                                <td>Thing</td>
+                                <td>Winner</td>
+                                <td>He/She ranked it</td>
+                                <td>Potential Swaps</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for index,thing in things.items %}
+                            <tr>
+                                <td>{{ thing.name }}</td>
+                                <td>{{ thing.winner.name }}</td>
+                                <td>{{ thing.winner_ranking }}</td>
+                                <td>{% for swapper in thing.potential_swappers %}{{ swapper.name }},{% endfor %}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

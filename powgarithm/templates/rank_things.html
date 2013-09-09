@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://static2cdn.hubspot.com/style_guide/static-4.277/sass/style_guide_plus_layout.css" />
+    <title>Page 3</title>
+</head>
+<body>
+    <div class="page" id="wrapper">
+        <div id="content" class="container-fluid">
+            <header class="hs-main">
+                <h1>OK, now everybody rank the things</h1>
+            </header>
+            <div class="row-fluid">
+                <form class="hs-form" action="/powgarithm/output_results/" method="POST">
+                    {% csrf_token %}
+                    {% for index,person in people.items %}
+                    <div class="span4">
+                        <h3>{{ person.name }}</h3>
+                        {% for index2,thing in things.items %}
+                        <div class="field">
+                            <label>Rank {{ thing.name }}</label>
+                            <div class="input">
+                                <select class="hs-input" name="person{{ index }}Thing{{ index2 }}">
+                                    {% for index3,thing in things.items %}
+                                    <option>{{ index3|add:"1" }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                    <div class="span2 offset5">
+                        <div class="actions">
+                            <input class="hs-button primary" type="submit" value="Submit!">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
